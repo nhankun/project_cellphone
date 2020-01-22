@@ -1,0 +1,22 @@
+<?php
+return [
+    'categories' => [
+        'order' => 'id',
+        'direction' => 'asc',
+        'search' => '',
+        'status'=>'',
+    ],
+    'providers' => [
+        'order' => 'id',
+        'direction' => 'asc',
+        'search' => '',
+        'status'=>'',
+    ],
+    'users' => [
+        'order' => 'id',
+        'direction' => 'asc',
+        'search' => '',
+        'status'=>'',
+    ]
+];
+?>
