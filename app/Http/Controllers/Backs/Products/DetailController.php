@@ -24,9 +24,8 @@ class DetailController extends Controller
      */
     public function index()
     {
-        $product_id = GetSession::getSessionProduct();
-        if (!is_null($product_id)){
-            $detail = $this->repository->getDetailByProduct($product_id);
+        $detail = $this->repository->getDetailByProduct(GetSession::getSessionProduct());
+        if ($detail){
             return $this->edit($detail);
         }else{
             return $this->create();

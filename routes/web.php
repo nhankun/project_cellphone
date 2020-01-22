@@ -52,11 +52,12 @@ Route::prefix('manager')->group(function () {
     });
 
     Route::namespace('Backs\Products')->group(function () {
-        Route::delete('product/delete/property', 'ProductController@deleteProperty')->name('products.deleteProperty');
-        Route::get('products/get-property-by-category', 'ProductController@setPropertyByCategoried')->name('products.getPropertyByCategory');
+        Route::prefix('products')->group(function () {
+            Route::delete('delete/property', 'ProductController@deleteProperty')->name('products.deleteProperty');
+            Route::get('get-property-by-category', 'ProductController@setPropertyByCategoried')->name('products.getPropertyByCategory');
+            Route::resource('details', 'DetailController');
+        });
         Route::resource('products', 'ProductController');
-
-        Route::resource('details', 'DetailController');
     });
 
 
