@@ -7,6 +7,7 @@ use App\Models\Categories\Category;
 use App\Models\Products\Product;
 use App\Models\Providers\Provider;
 use App\Repositories\Products\ProductRepository;
+use App\Services\GetSession;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -42,6 +43,7 @@ class ProductController extends Controller
     {
         $categories = Category::actived()->get();
         $providers = Provider::actived()->get();
+        GetSession::putSessionProduct(null);
         return view('backs.managers.products.basic-infos.create',compact(['categories','providers']));
     }
 
@@ -54,7 +56,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 //        dd($request->all());
-        $this->repository->create($request,null);
+        $product = $this->repository->create($request,null);
+        GetSession::putSessionProduct($product->id);
     }
 
     /**
@@ -78,6 +81,7 @@ class ProductController extends Controller
     {
         $categories = Category::actived()->get();
         $providers = Provider::actived()->get();
+        GetSession::putSessionProduct($product->id);
         return view('backs.managers.products.basic-infos.edit',compact(['product','categories','providers']));
     }
 

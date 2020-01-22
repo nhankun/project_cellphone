@@ -55,6 +55,8 @@ Route::prefix('manager')->group(function () {
         Route::delete('product/delete/property', 'ProductController@deleteProperty')->name('products.deleteProperty');
         Route::get('products/get-property-by-category', 'ProductController@setPropertyByCategoried')->name('products.getPropertyByCategory');
         Route::resource('products', 'ProductController');
+
+        Route::resource('details', 'DetailController');
     });
 
 

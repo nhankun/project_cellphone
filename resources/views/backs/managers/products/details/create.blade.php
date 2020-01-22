@@ -7,14 +7,14 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Create product
+                        Create product detail
                         <small></small>
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Manager</a></li>
-                        <li class="breadcrumb-item"><a href="#">product manager</a></li>
+                        <li class="breadcrumb-item"><a href="#">product detail manager</a></li>
                         <li class="breadcrumb-item active">Create</li>
                     </ol>
                 </div>
@@ -31,13 +31,13 @@
                         <div class="card-header">
                             <h3 class="card-title">
                                 <i class="fas fa-user-alt"></i>
-                                Create product
+                                Create product detail
                             </h3>
                         </div>
-                        <form role="form" action="{!! route('products.store') !!}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{!! route('details.store') !!}" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            @include('backs.managers.products.basic-infos.template')
+                            @include('backs.managers.products.details.template')
 
                         </form>
                         <!-- /.card -->

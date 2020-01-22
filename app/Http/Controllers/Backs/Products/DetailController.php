@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backs\Products;
 
 use App\Http\Controllers\Controller;
+use App\Models\Products\Product;
 use App\Repositories\Products\DetailRepository;
+use App\Services\GetSession;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -22,7 +24,13 @@ class DetailController extends Controller
      */
     public function index()
     {
-        //
+        $product_id = GetSession::getSessionProduct();
+        if (!is_null($product_id)){
+            $detail = $this->repository->getDetailByProduct($product_id);
+            return $this->edit($detail);
+        }else{
+            return $this->create();
+        }
     }
 
     /**
@@ -32,7 +40,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('backs.managers.products.details.create');
     }
 
     /**
@@ -63,9 +71,9 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $detail)
     {
-        //
+        dd($detail);
     }
 
     /**

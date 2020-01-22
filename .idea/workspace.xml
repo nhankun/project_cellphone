@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7bbd3d1-9159-478b-8962-56a23ff4bf83" name="Default Changelist" comment="" />
+    <list default="true" id="c7bbd3d1-9159-478b-8962-56a23ff4bf83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/DetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Products/DetailRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Products/DetailRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/details/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/details/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/details/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/details/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/details/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/details/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +24,16 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\php\project_cellphone\.idea" />
+      </set>
+    </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -109,26 +130,28 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1Vm1p2iPVapSqPESja6KZqXm2Yw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backs/managers/products/details" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\php\project_cellphone\resources\views\backs\managers\Products\basic-infos" />
-      <recent name="D:\php\project_cellphone\resources\views\backs\managers\Categories" />
-      <recent name="D:\php\project_cellphone\public\backs\assets\plugins" />
-      <recent name="D:\php\project_cellphone\app\Repositories\Admins\Users" />
-      <recent name="D:\php\project_cellphone\resources\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\php\project_cellphone\resources\views\backs\managers\Categories" />
       <recent name="D:\php\project_cellphone\app\Http\Controllers\Backs" />
       <recent name="D:\php\project_cellphone\app\Repositories\Providers" />
       <recent name="D:\php\project_cellphone\public\backs\assets\plugins\tel-input\build\css" />
       <recent name="D:\php\project_cellphone\resources\views\backs\admins\users" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\php\project_cellphone\resources\views\backs\managers\products\details" />
+      <recent name="D:\php\project_cellphone\resources\views\backs\managers\Products\basic-infos" />
+      <recent name="D:\php\project_cellphone\resources\views\backs\managers\Categories" />
+      <recent name="D:\php\project_cellphone\public\backs\assets\plugins" />
+      <recent name="D:\php\project_cellphone\app\Repositories\Admins\Users" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -179,11 +202,22 @@
       <workItem from="1579580271116" duration="10624000" />
       <workItem from="1579617750328" duration="5346000" />
       <workItem from="1579662084330" duration="623000" />
-      <workItem from="1579677890716" duration="3854000" />
+      <workItem from="1579677890716" duration="8416000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
