@@ -22,7 +22,9 @@
         });
 
         CKEDITOR.replace( 'description', {
+            // uiColor : '#007bff',
             filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
+            height: 500
 
         });
     </script>
