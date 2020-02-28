@@ -10,4 +10,16 @@ class DetailRepository
     {
         return Product::findOrFail($product_id);
     }
+
+    public function create($request, $product)
+    {
+        $product->description = $request->description;
+        return $product->update();
+    }
+
+    public function update($request, $product)
+    {
+        $product->description = $request->description;
+        return $product->update();
+    }
 }

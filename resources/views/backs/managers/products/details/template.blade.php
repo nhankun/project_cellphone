@@ -1,7 +1,7 @@
 <div class="card-body">
     <div class="form-group">
         <label for="description">Description</label>
-        <textarea name="description" id="description" rows="2" class="form-control description @error('description') is-invalid @enderror">{!! isset($product) ? $product->name : old('description') !!}</textarea>
+        <textarea name="description" id="description" rows="2" class="form-control description @error('description') is-invalid @enderror">{!! isset($product) ? $product->description : old('description') !!}</textarea>
         @error('description')
         <div class="invalid-feedback">
             {{ $message }}
@@ -9,6 +9,7 @@
         @enderror
     </div>
 
+{{--    <input type="hidden" name="productId" value="{!! $product->id !!}">--}}
 </div>
 <!-- /.card-body -->
 

@@ -34,7 +34,7 @@
                                 Create product detail
                             </h3>
                         </div>
-                        <form role="form" action="{!! route('details.store') !!}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{!! route('details.store',$product) !!}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             @include('backs.managers.products.details.template')

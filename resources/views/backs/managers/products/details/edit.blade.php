@@ -34,7 +34,7 @@
                                 Edit Product detail
                             </h3>
                         </div>
-                        <form role="form" action="{!! route('details.update',$detail) !!}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{!! route('details.update',$product) !!}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 

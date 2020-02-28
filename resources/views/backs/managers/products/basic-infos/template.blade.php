@@ -36,7 +36,7 @@
         <div class="col-4">
             <div class="text-center">
                 <label for="avatar">
-                    @if(isset($product) && $product->imageSmall->link != '')
+                    @if(isset($product) && $product->imageSmall)
                         <img class="profile-user-img img-fluid img-circle" src="{{asset($product->imageSmall->link)}}"
                              style="width: 80px;height: 80px;" alt="{{asset($product->name)}}">
                     @else
