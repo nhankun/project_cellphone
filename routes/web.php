@@ -63,6 +63,7 @@ Route::prefix('manager')->group(function () {
             Route::get('details/edit/{product}', 'ProductController@editProductDetail')->name('details.edit');
             Route::put('details/edit/{product}', 'ProductController@updateProductDetail')->name('details.update');
 //            Route::resource('details', 'DetailController');
+            Route::resource('images', 'ImageController');
         });
         Route::resource('products', 'ProductController');
     });
