@@ -24,11 +24,7 @@ class ImageRepository
             $datas['images'] = ($tourCompanyImage && $tourCompanyImage->images != '') ? $tourCompanyImage->images.','.$stringName : $stringName;
         }
         if ($tourCompanyImage) {
-            $oldLinkAvatar = $tourCompanyImage->avatar;
-            $tourCompanyImage->update($datas);
-            if(array_key_exists('avatar', $datas) && !empty($oldLinkAvatar)){
-                UploadFileToS3::delete($oldLinkAvatar);
-            }
+
         }else {
             $datas['tour_company_id'] = $tourCompanyId;
             $tourCompanyImage = TourCompanyImage::create($datas);
