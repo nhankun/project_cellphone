@@ -41,4 +41,9 @@ class Product extends Model
     {
         return $this->hasOne(Image::class, 'product_id','id')->where('type','small');
     }
+
+    public function imageGeneral()
+    {
+        return $this->hasOne(Image::class, 'product_id','id')->where('type','general');
+    }
 }

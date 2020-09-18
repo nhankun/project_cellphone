@@ -49,8 +49,10 @@ function deleteImage(event, div_id, image)
         	  image: image
           },
           success: function (response) {
+              console.log(response);
           },
           error: function (err) {
+              console.log(err);
           }
         });
       }
@@ -64,7 +66,7 @@ function deleteImage(event, div_id, image)
       file_length = filesToUpload.length;
       if(file_length == 0){
     	  change = false;
-    	  $('a#submit').text(btn_continue);
+    	  $('a#submit').text("continue");
     	  prompt = false;
       }
       changeDisplayIcon()

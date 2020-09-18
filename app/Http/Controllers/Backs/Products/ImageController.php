@@ -3,18 +3,33 @@
 namespace App\Http\Controllers\Backs\Products;
 
 use App\Http\Controllers\Controller;
+use App\Models\Products\Image;
+use App\Repositories\Products\ImageRepository;
+use App\Services\GetSession;
 use Illuminate\Http\Request;
 
 class ImageController extends Controller
 {
+    private $repository;
+
+    public function __construct(ImageRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return 'index';
+        $productImage = $this->repository::getProductImageByIdOrProductId(null, $request->cookie('product_id'));
+        if ($productImage){
+            return $this->edit($productImage);
+        }else{
+            return $this->create();
+        }
     }
 
     /**
@@ -35,7 +50,9 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->merge(['product_id'=>$request->cookie('product_id')]);
+        $result = $this->repository->createAndUpdate($request,null);
+        dd($result);
     }
 
     /**
@@ -55,9 +72,9 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Image $images)
     {
-        //
+        return view('backs.managers.products.images.create',compact('images'));
     }
 
     /**
@@ -69,7 +86,7 @@ class ImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -78,8 +95,9 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        $result = $this->repository->delete($request,$id);
+        dd($result);
     }
 }

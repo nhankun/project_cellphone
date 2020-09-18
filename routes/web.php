@@ -68,7 +68,10 @@ Route::prefix('manager')->group(function () {
         Route::resource('products', 'ProductController');
     });
 
-
+    //ProductManager
+    Route::namespace('Backs\Managers')->group(function () {
+        Route::resource('manager_products', 'ManagerProductController');
+    });
 
 });
 

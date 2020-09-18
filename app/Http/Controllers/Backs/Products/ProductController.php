@@ -14,12 +14,10 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     private $repository;
-    private $repositoryDetail;
 
-    public function __construct(ProductRepository $repository, DetailRepository $repositoryDetail)
+    public function __construct(ProductRepository $repository)
     {
         $this->repository = $repository;
-        $this->repositoryDetail = $repositoryDetail;
     }
 
     /**
@@ -46,8 +44,10 @@ class ProductController extends Controller
     {
         $categories = Category::actived()->get();
         $providers = Provider::actived()->get();
-        GetSession::putSessionProduct(null);
-        return view('backs.managers.products.basic-infos.create',compact(['categories','providers']));
+        return view('backs.managers.products.basic-infos.create',compact(['categories','providers']))
+            ->withCookie(
+                'product_id', null
+            );
     }
 
     /**
@@ -60,8 +60,10 @@ class ProductController extends Controller
     {
 //        dd($request->all());
         $product = $this->repository->create($request,null);
-        GetSession::putSessionProduct($product->id);
-        return redirect()->route('details.create',$product);
+        return redirect()->route('images.index')
+            ->withCookie(
+                'product_id', $product->id
+            );
     }
 
     /**
@@ -85,8 +87,10 @@ class ProductController extends Controller
     {
         $categories = Category::actived()->get();
         $providers = Provider::actived()->get();
-        GetSession::putSessionProduct($product->id);
-        return view('backs.managers.products.basic-infos.edit',compact(['product','categories','providers']));
+        return view('backs.managers.products.basic-infos.edit',compact(['product','categories','providers']))
+            ->withCookie(
+                'product_id', $product->id
+            );
     }
 
     /**
@@ -99,7 +103,10 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product = $this->repository->create($request, $product);
-        return redirect()->route('details.edit',$product);
+        return redirect()->route('images.index')
+            ->withCookie(
+                'product_id', $product->id
+            );
     }
 
     /**
@@ -132,35 +139,4 @@ class ProductController extends Controller
         }
     }
 
-    // product detail
-
-    public function createProductDetail(Product $product)
-    {
-        return view('backs.managers.products.details.create',compact('product'));
-    }
-
-    public function storeProductDetail(Request $request, Product $product)
-    {
-        $result = $this->repositoryDetail->create($request, $product);
-        if ($result == true){
-            return 'ok';
-        }else{
-            return 'err';
-        }
-    }
-
-    public function editProductDetail(Product $product)
-    {
-        return view('backs.managers.products.details.edit',compact('product'));
-    }
-
-    public function updateProductDetail(Request $request, Product $product)
-    {
-        $result = $this->repositoryDetail->update($request, $product);
-        if ($result == true){
-            return 'ok(update)';
-        }else{
-            return 'err(update)';
-        }
-    }
 }

@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{!! route('manager_products.index') !!}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Product</p>
                         </a>

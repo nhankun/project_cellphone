@@ -232,8 +232,9 @@ return [
 
     'nbrPages' => [
         'back' => [
-            'users' => 4,
-            'providers' => 4,
+            'users' => 10,
+            'providers' => 10,
+            'products' => 10
         ]
     ]
 

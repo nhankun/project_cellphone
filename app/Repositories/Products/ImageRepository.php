@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Products;
 
+use App\Models\Products\Image;
 use App\Models\Products\Product;
 use App\Services\Uploads\handleUploadImage;
 
@@ -11,42 +12,45 @@ class ImageRepository
 
     CONST WIDTH_IMG = 800;
     CONST HEIGHT_IMG = 600;
-    CONST TYPE_IMG = 'big';
+    CONST TYPE_IMG = 'general';
 
-    public function createAndUpdate($request, $tourCompanyImageId)
+    public function createAndUpdate($request, $imageId)
     {
         $stringName = '';
         $datas = [];
-        $tourCompanyId = $request->tour_company_id;
-        $tourCompanyImage = self::getTourCompanyImageByIdOrTourCompanyId($tourCompanyImageId, $tourCompanyId);
-        if ($request->hasFile('images')) {
-            $stringName = $this->forEachFile($request, $tourCompanyId, $stringName, 'images');
-            $datas['images'] = ($tourCompanyImage && $tourCompanyImage->images != '') ? $tourCompanyImage->images.','.$stringName : $stringName;
-        }
-        if ($tourCompanyImage) {
+        $datas['title'] = '';
+        $datas['type'] =  self::TYPE_IMG;
+        $productId = $request->product_id;
+        $datas['product_id'] = $productId;
+        $productImage = self::getProductImageByIdOrProductId($imageId, $productId);
 
+        if ($request->hasFile('images')) {
+            $stringName = $this->forEachFile($request, $productId, $stringName, 'images');
+            $datas['link'] = ($productImage && $productImage->link != '') ? $productImage->link.','.$stringName : $stringName;
+        }
+        if ($productImage) {
+            $productImage = $productImage->update($datas);
         }else {
-            $datas['tour_company_id'] = $tourCompanyId;
-            $tourCompanyImage = TourCompanyImage::create($datas);
+            $productImage = Image::create($datas);
         }
 
         return [
-            'tour_company_image_id' => $tourCompanyImage->id,
+            'image_id' => $imageId,
             'link' => $stringName
         ];
     }
 
-    public function uploadImage($file, $productId, $imageId, $count)
+    public function uploadImage($file, $productId, $imageId, $count = '')
     {
-        $dir = 'images/products/'.$productId.'/general/'.self::TYPE_IMG.'/'.$imageId.'/';
+        $dir = 'uploads/products/'.$productId.'/general/'.self::TYPE_IMG.'/'.$imageId.'/';
         $file_name = $this->handleUploadImage($file,$dir,self::WIDTH_IMG,self::HEIGHT_IMG,$count);
         return $file_name;
     }
 
-    public function forEachFile($request, $tourCompanyId, $stringName, $input_name)
+    public function forEachFile($request, $productId, $stringName, $input_name)
     {
         foreach ($request->file($input_name) as $index=>$image) {
-            $stringName .= ','.$this->uploadImage($image, $tourCompanyId, $index);
+            $stringName .= ','.$this->uploadImage($image, $productId, $index);
         }
 
         return ltrim($stringName, ',');
@@ -55,27 +59,25 @@ class ImageRepository
     public function delete($request, $id)
     {
         $image = $request->image;
-        $tourCompanyImage = self::getTourCompanyImageByIdOrTourCompanyId($id, null);
-        $result = false;
-        if($tourCompanyImage->images != ''){
-            $images = explode(',', $tourCompanyImage->images);
+        $productImage = self::getProductImageByIdOrProductId($id, null);
+        if($productImage->link != ''){
+            $images = explode(',', $productImage->link);
             if(in_array($image, $images)){
                 $key = array_search($image, $images);
                 unset($images[$key]);
-                $tourCompanyImage->images = implode(',', $images);
-                $tourCompanyImage->update();
-                $result = UploadFileToS3::delete($image);
+                $productImage->link = implode(',', $images);
+                $productImage->update();
             }
         }
-        return ($result != false) ? $result['@metadata']['statusCode']: $result;
+        return $productImage;
     }
 
-    public static function getTourCompanyImageByIdOrTourCompanyId($tourCompanyImageId, $tourCompanyId)
+    public static function getProductImageByIdOrProductId($productImageId, $productId)
     {
-        return TourCompanyImage::when($tourCompanyImageId != null, function($query) use ($tourCompanyImageId){
-            $query->where('id', $tourCompanyImageId);
-        }, function($query) use ($tourCompanyId){
-            $query->where('tour_company_id', $tourCompanyId);
+        return Image::when($productImageId != null, function($query) use ($productImageId){
+            $query->where('id', $productImageId)->where('type', self::TYPE_IMG);
+        }, function($query) use ($productId){
+            $query->where('product_id', $productId)->where('type', self::TYPE_IMG);
         })->first();
     }
 }

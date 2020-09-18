@@ -141,6 +141,21 @@
 
     </div>
 
+    <div class="row">
+        <fieldset class="scheduler-border container-fluid">
+            <legend class="scheduler-border">Description</legend>
+            <div class="form-group">
+{{--                <label for="description">Description</label>--}}
+                <textarea name="description" id="description" rows="2" class="form-control description @error('description') is-invalid @enderror">{!! isset($product) ? $product->description : old('description') !!}</textarea>
+                @error('description')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
+            </div>
+        </fieldset>
+    </div>
+
 
 </div>
 <!-- /.card-body -->
@@ -332,5 +347,18 @@
 
     </script>
 
+    <script src="{!! asset('js/ckeditor/ckeditor.js') !!}"></script>
+    <script !src="">
+        $(window).bind('load',function () {
+        });
 
+        CKEDITOR.replace( 'description', {
+            // uiColor : '#007bff',
+            filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
+            height: 400
+
+        });
+    </script>
+
+    @include('ckfinder::setup')
 @endsection

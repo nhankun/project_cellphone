@@ -17,6 +17,12 @@ return [
         'direction' => 'asc',
         'search' => '',
         'status'=>'',
+    ],
+    'products' => [
+        'order' => 'id',
+        'direction' => 'asc',
+        'search' => '',
+        'status'=>'',
     ]
 ];
 ?>
