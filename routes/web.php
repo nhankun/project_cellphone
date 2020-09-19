@@ -33,6 +33,8 @@ Route::prefix('admin')->group(function () {
 //MANAGER
 Route::prefix('manager')->group(function () {
 
+    Route::resource('/dashboard', 'Backs\DashboardController');
+
     //ProviderManager
     Route::namespace('Backs\Managers')->group(function () {
         Route::resource('manager_providers', 'ManagerProviderController');
@@ -55,7 +57,13 @@ Route::prefix('manager')->group(function () {
         Route::prefix('products')->group(function () {
             Route::delete('delete/property', 'ProductController@deleteProperty')->name('products.deleteProperty');
             Route::get('get-property-by-category', 'ProductController@setPropertyByCategoried')->name('products.getPropertyByCategory');
-            Route::resource('details', 'DetailController');
+
+            Route::get('details/create/{product}', 'ProductController@createProductDetail')->name('details.create');
+            Route::post('details/create/{product}', 'ProductController@storeProductDetail')->name('details.store');
+            Route::get('details/edit/{product}', 'ProductController@editProductDetail')->name('details.edit');
+            Route::put('details/edit/{product}', 'ProductController@updateProductDetail')->name('details.update');
+//            Route::resource('details', 'DetailController');
+            Route::resource('images', 'ImageController');
         });
         Route::resource('products', 'ProductController');
     });
@@ -63,3 +71,9 @@ Route::prefix('manager')->group(function () {
 
 
 });
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

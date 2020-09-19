@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
 use App\Models\Products\Product;
 use App\Models\Providers\Provider;
+use App\Repositories\Products\DetailRepository;
 use App\Repositories\Products\ProductRepository;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
@@ -13,10 +14,12 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     private $repository;
+    private $repositoryDetail;
 
-    public function __construct(ProductRepository $repository)
+    public function __construct(ProductRepository $repository, DetailRepository $repositoryDetail)
     {
         $this->repository = $repository;
+        $this->repositoryDetail = $repositoryDetail;
     }
 
     /**
@@ -58,6 +61,7 @@ class ProductController extends Controller
 //        dd($request->all());
         $product = $this->repository->create($request,null);
         GetSession::putSessionProduct($product->id);
+        return redirect()->route('details.create',$product);
     }
 
     /**
@@ -95,7 +99,7 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product = $this->repository->create($request, $product);
-        return redirect()->back()->with('product',$product);
+        return redirect()->route('details.edit',$product);
     }
 
     /**
@@ -125,6 +129,38 @@ class ProductController extends Controller
         if ($request->ajax())
         {
             return Response()->json(['result'=>$result],200);
+        }
+    }
+
+    // product detail
+
+    public function createProductDetail(Product $product)
+    {
+        return view('backs.managers.products.details.create',compact('product'));
+    }
+
+    public function storeProductDetail(Request $request, Product $product)
+    {
+        $result = $this->repositoryDetail->create($request, $product);
+        if ($result == true){
+            return 'ok';
+        }else{
+            return 'err';
+        }
+    }
+
+    public function editProductDetail(Product $product)
+    {
+        return view('backs.managers.products.details.edit',compact('product'));
+    }
+
+    public function updateProductDetail(Request $request, Product $product)
+    {
+        $result = $this->repositoryDetail->update($request, $product);
+        if ($result == true){
+            return 'ok(update)';
+        }else{
+            return 'err(update)';
         }
     }
 }

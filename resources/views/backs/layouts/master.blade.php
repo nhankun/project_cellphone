@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="{!! asset('backs/assets/plugins/jqvmap/jqvmap.min.css') !!}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{!! asset('backs/assets/dist/css/adminlte.min.css') !!}">
+    <!-- my style -->
+    <link rel="stylesheet" href="{!! asset('backs/assets/dist/css/mystyle.css') !!}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{!! asset('backs/assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') !!}">
     <!-- Daterange picker -->
@@ -37,6 +39,8 @@
     <link rel="stylesheet" href="{!! asset('backs/assets/plugins/sweetalert2/sweetalert2.min.css') !!}">
     <!-- Input phone -->
     <link rel="stylesheet" href="{!! asset('backs/assets/plugins/tel-input/build/css/intlTelInput.css') !!}">
+    <!-- flag-icon-css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -48,10 +52,11 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
+        <a href="{!! route('dashboard.index') !!}" class="brand-link">
             <img src="{!! asset('backs/assets/dist/img/AdminLTELogo.png') !!}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">Admin Cellphone</span>
+{{--            <span class="brand-text font-weight-light">AdminLTE 3</span>--}}
         </a>
 
         <!-- Sidebar -->
