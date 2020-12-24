@@ -375,10 +375,10 @@
     </state>
     <state x="277" y="61" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603021886357" />
     <state x="346" y="77" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1607178374931" />
-    <state x="581" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1607160462771">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="465" y="243" key="com.intellij.ide.util.TipDialog" timestamp="1608808426653">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1603021854981" />
+    <state x="465" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1608808426653" />
     <state x="581" y="306" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607160462771" />
     <state x="573" y="140" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605440610038">
       <screen x="0" y="0" width="1920" height="1050" />
