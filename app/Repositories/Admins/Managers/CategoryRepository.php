@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Managers;
+namespace App\Repositories\Admins\Managers;
 
 use App\Models\Categories\Category;
 use App\Services\Uploads\handleUploadImage;

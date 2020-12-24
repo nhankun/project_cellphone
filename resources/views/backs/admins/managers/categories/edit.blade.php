@@ -1,4 +1,4 @@
-@extends('backs.layouts.master')
+@extends('backs.admins.layouts.master')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -38,7 +38,7 @@
                             @csrf
                             @method('PUT')
 
-                            @include('backs.managers.categories.template')
+                            @include('backs.admins.managers.categories.template')
 
                         </form>
                         <!-- /.card -->

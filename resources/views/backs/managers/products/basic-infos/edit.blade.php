@@ -27,14 +27,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-user-edit"></i>
-                                Edit Product '{!! $product->name !!}'
-                            </h3>
-                        </div>
-                        <form role="form" action="{!! route('products.update',$product) !!}" method="post" enctype="multipart/form-data">
+                    <div class="card card-primary card-outline card-tabs">
+                        @include("backs.managers.products.edit_tags")
+
+                        <form role="form" class="form-edit" action="{!! route('products.update',$product) !!}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 

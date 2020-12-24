@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset("css/managers/categories.css") }}">
+<link rel="stylesheet" href="{{ asset("backs/css/categories/categories.css") }}">
 <div class="card-body">
     <div class="row">
         <div class="col-8">
@@ -100,8 +100,8 @@
 </div>
 
 @section('script')
-    <script src="{{ asset("js/managers/categories/image.js") }}"></script>
-    <script src="{{ asset("js/managers/categories/categories.js") }}"></script>
+    <script src="{{ asset("backs/js/categories/image.js") }}"></script>
+    <script src="{{ asset("backs/js/categories/categories.js") }}"></script>
 
 
 @endsection

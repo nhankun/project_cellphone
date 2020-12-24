@@ -34,7 +34,7 @@
                                 Edit Product images
                             </h3>
                         </div>
-                        <form role="form" action="{!! route('images.update',$images) !!}" method="post" id="form_image" enctype="multipart/form-data">
+                        <form role="form" class="form-edit" action="{!! route('images.update',$images) !!}" method="post" id="form_image" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 

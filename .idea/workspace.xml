@@ -2,24 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7bbd3d1-9159-478b-8962-56a23ff4bf83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/Managers/ManagerProductRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admins/Managers/CategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/ManufacturerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Admins/Managers/CategoryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Repositories/Managers/ManufacturerRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ManufacturersTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/managers/edit_tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/categories/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/categories/table.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/categories/template.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/managers/manufacturers/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/edit_tags.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/DetailController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ImageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Admins/Managers/Users/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admins/Managers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Admins/Users/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Categories/CategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Managers/ManagerCategoryController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Managers/ManagerProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/ManagerProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Managers/ManagerProviderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Managers/ManagerProviderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Products/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Products/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backs/Providers/ProviderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/ProviderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Categories/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Categories/Category.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Products/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Products/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Products/DetailRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Products/ImageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Products/ImageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Users/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Users/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Admins/Managers/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Admins/Managers/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Admins/Users/UserRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Categories/CategoryRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Managers/ManagerCategoryRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Products/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Products/ProductRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/parameters.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/parameters.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/backs/js/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/backs/js/images.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_31_163125_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_31_163125_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/ProvidersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProvidersTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/admins/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/admins/users/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/users/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/layouts/partials/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/layouts/partials/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backs/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/manufacturers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/admins/managers/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/manufacturers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/categories/table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/manufacturers/table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/categories/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/manufacturers/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/basic-infos/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/details/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/details/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/images/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/images/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/images/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/images/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/images/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/images/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backs/managers/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backs/managers/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,24 +208,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/Managers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/backs/js" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\project_cellphone\app\Repositories\Managers" />
-      <recent name="C:\xampp\htdocs\project_cellphone\resources\views\backs\managers\products" />
-      <recent name="D:\PHP\project_cellphone\public\backs\images" />
-      <recent name="D:\PHP\project_cellphone\public\js" />
-      <recent name="D:\PHP\project_cellphone\resources\views\backs\managers\products\images" />
+      <recent name="C:\xampp\htdocs\project_cellphone\public\backs\js" />
+      <recent name="C:\xampp\htdocs\project_cellphone\public\backs\css" />
+      <recent name="C:\xampp\htdocs\project_cellphone\resources\views\backs\admins" />
+      <recent name="C:\xampp\htdocs\project_cellphone\resources\views\backs\admins\layouts" />
+      <recent name="C:\xampp\htdocs\project_cellphone\resources\lang\en" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PHP\project_cellphone\public\backs\js" />
-      <recent name="D:\PHP\project_cellphone\public\backs" />
-      <recent name="D:\PHP\project_cellphone\app\Http\Controllers\Backs" />
-      <recent name="D:\php\project_cellphone\resources\views\backs\managers\Categories" />
-      <recent name="D:\php\project_cellphone\app\Http\Controllers\Backs" />
+      <recent name="C:\xampp\htdocs\project_cellphone\resources\views\backs\admins\managers\users" />
+      <recent name="C:\xampp\htdocs\project_cellphone\app\Http\Controllers\Admins\Managers" />
+      <recent name="C:\xampp\htdocs\project_cellphone\public\backs\js" />
+      <recent name="C:\xampp\htdocs\project_cellphone\app\Repositories\Admins\Managers" />
+      <recent name="C:\xampp\htdocs\project_cellphone\resources\views\backs\admins\managers" />
     </key>
   </component>
   <component name="RunManager">
@@ -253,6 +291,26 @@
       <workItem from="1584452746805" duration="1283000" />
       <workItem from="1584534977527" duration="2080000" />
       <workItem from="1585230021162" duration="301000" />
+      <workItem from="1600468380871" duration="1906000" />
+      <workItem from="1600516985329" duration="2593000" />
+      <workItem from="1600586449898" duration="10931000" />
+      <workItem from="1600650989129" duration="18981000" />
+      <workItem from="1602037647863" duration="3505000" />
+      <workItem from="1603021840417" duration="2317000" />
+      <workItem from="1604147055429" duration="3520000" />
+      <workItem from="1604836943950" duration="6099000" />
+      <workItem from="1604924984762" duration="893000" />
+      <workItem from="1604925893550" duration="3505000" />
+      <workItem from="1605014129821" duration="4451000" />
+      <workItem from="1605254310347" duration="32000" />
+      <workItem from="1605255967915" duration="658000" />
+      <workItem from="1605437390693" duration="5121000" />
+      <workItem from="1605700296080" duration="4926000" />
+      <workItem from="1606046244169" duration="1331000" />
+      <workItem from="1606133512616" duration="3690000" />
+      <workItem from="1606881238311" duration="1264000" />
+      <workItem from="1607069104017" duration="1808000" />
+      <workItem from="1607160462940" duration="1850000" />
     </task>
     <servers />
   </component>
@@ -303,26 +361,32 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1584281170452">
+    <state x="359" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1600603364589">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1584281170452" />
-    <state x="279" y="58" key="SettingsEditor" timestamp="1582201052121">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="359" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1600603364589" />
+    <state x="624" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606135175791">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="279" y="58" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582201052121" />
-    <state width="574" height="446" key="SwitcherDM" timestamp="1582209351412">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="499" y="173" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1600590995185" />
+    <state x="624" y="218" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606135175791" />
+    <state x="346" y="77" key="SettingsEditor" timestamp="1607178374931">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="574" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1582209351412" />
-    <state x="477" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1585230022213">
+    <state x="277" y="61" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1603021886357" />
+    <state x="346" y="77" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1607178374931" />
+    <state x="581" y="306" key="com.intellij.ide.util.TipDialog" timestamp="1607160462771">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="465" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1603021854981" />
+    <state x="581" y="306" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1607160462771" />
+    <state x="573" y="140" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605440610038">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="573" y="140" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1605440610038" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1600607203151">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583236457400" />
-    <state x="477" y="244" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1585230022213" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583237039524">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583237039524" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1600607203151" />
   </component>
 </project>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admins\Managers\Users;
+namespace App\Http\Controllers\Admins\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backs\Admins\Managers\Users\UserRequest;
@@ -8,30 +8,42 @@ use App\Models\District;
 use App\Models\Province;
 use App\Models\Users\User;
 use App\Repositories\Admins\Managers\UserRepository;
+use App\Services\Indexable;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    use Indexable;
+
+    private $table;
     private $repository;
 
     public function __construct(UserRepository $repository)
     {
+        $this->table = 'users';
         $this->repository = $repository;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
-        $user = $this->repository->getUserFirst();
-        if ($user){
-            return  redirect()->route('admin_users.index');
-        }else{
-            return $this->create();
+        $parameters = $this->getParameters($request);
+        $records = $this->repository->getAll(config('app.nbrPages.back.'.$this->table),$parameters);
+
+        $links = $records->appends($parameters)->links('pagination');
+
+        if ($request->ajax())
+        {
+            return response()->json([
+                'table' => view('backs.admins.managers.users.table',['users'=>$records])->render(),
+                'pagination' => $links->toHtml(),
+            ]);
         }
+        return view('backs.admins.managers.users.index',['users'=>$records,'links'=>$links]);
+    }
+
+    public function destroy(User $admin_user)
+    {
+        $this->repository->delete($admin_user);
     }
 
     /**
@@ -54,7 +66,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $user = $this->repository->create($request,null);
-        return redirect()->route('admin_users.index');
+        return redirect()->route('users.index');
     }
 
     /**
@@ -90,18 +102,7 @@ class UserController extends Controller
     public function update(UserRequest $request,User $user)
     {
         $record = $this->repository->create($request,$user);
-        return redirect()->route('admin_users.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('users.index');
     }
 
     public function getDistrictByProvince(Request $request)

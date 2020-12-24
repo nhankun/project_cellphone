@@ -1,4 +1,4 @@
-@extends('backs.layouts.master')
+@extends('backs.admins.layouts.master')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -37,7 +37,7 @@
                         <form role="form" action="{!! route('categories.store') !!}" method="post" enctype="multipart/form-data">
                             @csrf
 
-                            @include('backs.managers.categories.template')
+                            @include('backs.admins.managers.categories.template')
 
                         </form>
                         <!-- /.card -->

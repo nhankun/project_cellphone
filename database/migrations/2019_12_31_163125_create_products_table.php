@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->unsigned();
             $table->bigInteger('provider_id')->unsigned();
+            $table->bigInteger('manufacturer_id')->unsigned();
             $table->string('name');
             $table->integer('quantity');
             $table->integer('price');
@@ -31,6 +32,10 @@ class CreateProductsTable extends Migration
 
             $table->foreign('provider_id')
                 ->references('id')->on('providers')
+                ->onDelete('cascade');
+
+            $table->foreign('manufacturer_id')
+                ->references('id')->on('manufacturers')
                 ->onDelete('cascade');
         });
     }

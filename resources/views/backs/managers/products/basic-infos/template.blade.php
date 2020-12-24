@@ -104,6 +104,21 @@
                 @enderror
             </div>
         </div>
+
+        <div class="col-6">
+            <div class="form-group">
+                <label>manufacturers</label>
+                <select name="manufacturer" class="form-control select2bs4" id="manufacturers" style="width: 100%;">
+                    @foreach($manufacturers as $manufacturer)
+                        <option value="{{ $manufacturer->id }}"
+                                @if(old('manufacturer_id', isset($product) ? $product->manufacturer_id : '') == $manufacturer->id)
+                                selected="selected"
+                            @endif
+                        >{{ $manufacturer->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        </div>
     </div>
 
     <div class="row">

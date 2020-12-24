@@ -2,6 +2,8 @@
 
 return [
 
+
+    'languages'=>['en','vi'],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -93,7 +95,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -234,7 +236,8 @@ return [
         'back' => [
             'users' => 10,
             'providers' => 10,
-            'products' => 10
+            'products' => 10,
+            'manufacturers' => 10
         ]
     ]
 

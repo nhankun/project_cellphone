@@ -34,7 +34,7 @@
                                 Create product images
                             </h3>
                         </div>
-                        <form role="form" action="{!! route('images.store') !!}" id="form_image" method="post" enctype="multipart/form-data">
+                        <form role="form" class="form-edit" action="{!! route('images.store') !!}" id="form_image" method="post" enctype="multipart/form-data">
                             @csrf
 
                             @include('backs.managers.products.images.template')

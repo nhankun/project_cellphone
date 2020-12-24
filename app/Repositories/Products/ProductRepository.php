@@ -2,9 +2,12 @@
 
 namespace App\Repositories\Products;
 
+use App\Models\Categories\Category;
 use App\Models\Products\Image;
+use App\Models\Products\Manufacturer;
 use App\Models\Products\Product;
 use App\Models\Products\Property;
+use App\Models\Providers\Provider;
 use App\Services\Uploads\handleUploadImage;
 
 class ProductRepository
@@ -26,6 +29,7 @@ class ProductRepository
             $product->update([
                 'category_id'=>$request->category,
                 'provider_id'=>$request->provider,
+                'manufacturer_id' => $request->manufacturer,
                 "name" => $request->name,
                 'quantity'=>$request->quantity,
                 'price'=>$request->price,
@@ -38,6 +42,7 @@ class ProductRepository
             $product = Product::create([
                 'category_id'=>$request->category,
                 'provider_id'=>$request->provider,
+                'manufacturer_id' => $request->manufacturer,
                 "name" => $request->name,
                 'quantity'=>$request->quantity,
                 'price'=>$request->price,
@@ -99,6 +104,15 @@ class ProductRepository
                 ]);
             }
         }
+    }
+
+    public function getSelectionData()
+    {
+        return [
+            "categories" => Category::actived()->get(),
+            "manufacturers" => Manufacturer::actived()->get(),
+            "providers" => Provider::actived()->get()
+        ];
     }
 
     public function deleteProperty($id)

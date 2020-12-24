@@ -2,6 +2,7 @@
 
 namespace App\Models\Categories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -30,5 +31,19 @@ class Category extends Model
     public function scopeActived()
     {
         return $this->where('status',1);
+    }
+
+    public function getTimeLoggedIn($to)
+    {
+        Carbon::setLocale('vi');
+
+        $to = Carbon::createFromFormat('Y-m-d H:i:s', $to);
+        $from = Carbon::createFromFormat('Y-m-d H:i:s', Carbon::now());
+
+//        $diff_in_months = $to->diffInMonths($from);
+//        $diff_in_days = $to->diffInDays($from);
+//        $diff_In_Hours = $to->diffInHours($from);
+        $diffForHumans = $to->diffForHumans($from);
+        return $diffForHumans;
     }
 }

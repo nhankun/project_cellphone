@@ -7,15 +7,14 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Category manager
+                        Hãng sản xuất
                         {{--                        <small>list all</small>--}}
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Manager</a></li>
-                        <li class="breadcrumb-item"><a href="#">Category</a></li>
-                        <li class="breadcrumb-item active">List</li>
+                        <li class="breadcrumb-item"><a href="#">Quản lý</a></li>
+                        <li class="breadcrumb-item active">Hãng sản xuất</li>
                     </ol>
                 </div>
             </div>
@@ -30,9 +29,9 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-user"></i>
-                                Category list
-                                <a href="{!! route('categories.create') !!}"><i class="fas fa-plus-circle"></i></a>
+                                <a href="{!! route('manufacturers.create') !!}" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>
+                                    Thêm mới
+                                </a>
                             </h3>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 100%;">
@@ -61,13 +60,11 @@
                                         Name
                                     </th>
                                     <th class="text-center">icon</th>
-                                    <th class="text-center">User create</th>
-                                    <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="pannel">
-                                @include('backs.managers.categories.table')
+                                @include('backs.managers.manufacturers.table')
                                 </tbody>
                             </table>
                         </div>
@@ -99,7 +96,7 @@
 
         var categories = (function () {
 
-                var url = '{{ route('categories.index') }}';
+                var url = '{{ route('manufacturers.index') }}';
                 var title = "Are you sure?";
                 var text = "You won't be able to revert this!";
                 var cancelButtonText = "Cancel";

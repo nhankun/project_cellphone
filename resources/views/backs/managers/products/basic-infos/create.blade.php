@@ -7,15 +7,15 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Create product
+                        Thêm sản phẩm
                         <small></small>
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Manager</a></li>
-                        <li class="breadcrumb-item"><a href="#">product manager</a></li>
-                        <li class="breadcrumb-item active">Create</li>
+                        <li class="breadcrumb-item"><a href="#">Quản lý</a></li>
+                        <li class="breadcrumb-item"><a href="#">Sản phẩm</a></li>
+                        <li class="breadcrumb-item active">Thêm</li>
                     </ol>
                 </div>
             </div>
@@ -28,12 +28,12 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-primary card-outline">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                <i class="fas fa-user-alt"></i>
-                                Create product
-                            </h3>
-                        </div>
+{{--                        <div class="card-header">--}}
+{{--                            <h3 class="card-title">--}}
+{{--                                <i class="fas fa-user-alt"></i>--}}
+{{--                                Create product--}}
+{{--                            </h3>--}}
+{{--                        </div>--}}
                         <form role="form" action="{!! route('products.store') !!}" method="post" enctype="multipart/form-data">
                             @csrf
 

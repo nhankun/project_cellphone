@@ -16,24 +16,24 @@ class ProvidersTableSeeder extends Seeder
         DB::table('providers')->insert([
             [
                 'id' => 1,
-                'name' => 'Asus',
-                'email' => 'asus@asus.com',
+                'name' => 'cellphone',
+                'email' => 'manage@cellphone.com',
                 'status' => true,
                 'created_at'=>$currentTime,
                 'updated_at'=>$currentTime
             ],
             [
                 'id'=>2,
-                'name' => 'Dell',
-                'email' => 'dell@dell.com',
+                'name' => 'toki',
+                'email' => 'manage@toki.com',
                 'status' => true,
                 'created_at'=>$currentTime,
                 'updated_at'=>$currentTime
             ],
             [
                 'id'=>3,
-                'name' => 'Apple',
-                'email' => 'apple@apple.com',
+                'name' => 'toko',
+                'email' => 'toko@toko.com',
                 'status' => true,
                 'created_at'=>$currentTime,
                 'updated_at'=>$currentTime

@@ -15,7 +15,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'category_id', 'provider_id','name', 'quantity','price','description','status'
+        'category_id', 'provider_id', 'manufacturer_id', 'name', 'quantity', 'price', 'description', 'status'
     ];
 
     /**
@@ -45,5 +45,10 @@ class Product extends Model
     public function imageGeneral()
     {
         return $this->hasOne(Image::class, 'product_id','id')->where('type','general');
+    }
+
+    public function manufacturer()
+    {
+        return $this->belongsTo(Manufacturer::class, 'manufacturer_id');
     }
 }

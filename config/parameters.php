@@ -23,6 +23,12 @@ return [
         'direction' => 'asc',
         'search' => '',
         'status'=>'',
+    ],
+    'manufacturers' => [
+        'order' => 'id',
+        'direction' => 'asc',
+        'search' => '',
+        'status'=>'',
     ]
 ];
 ?>

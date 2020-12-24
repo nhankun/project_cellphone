@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backs\Products;
+namespace App\Http\Controllers\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;

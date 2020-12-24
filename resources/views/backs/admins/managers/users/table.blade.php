@@ -25,7 +25,7 @@
         <td class="text-center">
             <a href="{!! route('users.edit',$user) !!}" class="mb-2 mr-2 btn btn-info"><i class="fas fa-edit"></i>
             </a>
-            <a href="{!! route('admin_users.destroy',$user) !!}" class="mb-2 mr-2 btn btn-danger simpleConfirm"><i
+            <a href="{!! route('users.destroy',$user) !!}" class="mb-2 mr-2 btn btn-danger simpleConfirm"><i
                     class="far fa-trash-alt"></i>
             </a>
         </td>

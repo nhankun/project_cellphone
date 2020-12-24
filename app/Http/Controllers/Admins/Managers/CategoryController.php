@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Managers;
+namespace App\Http\Controllers\Admins\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
-use App\Models\Providers\Provider;
-use App\Repositories\Managers\CategoryRepository;
-use App\Repositories\Managers\ManagerProviderRepository;
+use App\Repositories\Admins\Managers\CategoryRepository;
 use App\Services\Indexable;
 use Illuminate\Http\Request;
 
@@ -33,11 +31,11 @@ class CategoryController extends Controller
         if ($request->ajax())
         {
             return response()->json([
-                'table' => view('backs.managers.categories.table',['categories'=>$records])->render(),
+                'table' => view('backs.admins.managers.categories.table',['categories'=>$records])->render(),
                 'pagination' => $links->toHtml(),
             ]);
         }
-        return view('backs.managers.categories.index',['categories'=>$records,'links'=>$links]);
+        return view('backs.admins.managers.categories.index',['categories'=>$records,'links'=>$links]);
     }
 
     /**
@@ -47,7 +45,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backs.managers.categories.create');
+        return view('backs.admins.managers.categories.create');
     }
 
     /**
@@ -82,7 +80,7 @@ class CategoryController extends Controller
     public function edit($categoryId)
     {
         $category = $this->repository->getCategoryById($categoryId);
-        return view('backs.managers.categories.edit',compact('category'));
+        return view('backs.admins.managers.categories.edit',compact('category'));
     }
 
     /**

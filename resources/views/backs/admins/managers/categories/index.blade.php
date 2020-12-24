@@ -1,4 +1,4 @@
-@extends('backs.layouts.master')
+@extends('backs.admins.layouts.master')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -60,13 +60,13 @@
                                         Name
                                     </th>
                                     <th class="text-center">icon</th>
-                                    <th class="text-center">User create</th>
+                                    <th class="text-center">Time create</th>
                                     <th class="text-center">Status</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody id="pannel">
-                                @include('backs.managers.categories.table')
+                                @include('backs.admins.managers.categories.table')
                                 </tbody>
                             </table>
                         </div>
@@ -92,7 +92,7 @@
 @section('script')
     {{--    <script src="{!! asset('backs/admin/js/category.js') !!}"></script>--}}
     {{-- Chưa làm order by theo current pages  --}}
-    <script defer src="{{ asset('js/common.js') }}"></script>
+    <script defer src="{{ asset('backs/js/common.js') }}"></script>
     <script !src="">
             var url_approved = "{!! route('categories.approved', ['category' => 'category']) !!}";
             var url_cancel = "{!! route('categories.cancel', ['category' => 'category']) !!}";
@@ -139,8 +139,11 @@
 
         $(document).ready(categories.onReady)
 
+            // that, target, verb, template, errorAjax
         function approved(that, id) {
-            common.approved(that, id, url_approved)
+            let target = url_approved.replace("category",id)
+            let template = `<button class="mb-2 mr-2 btn btn-success" onclick="cancel(this,${id})"><i class="fas fa-check-circle"></i>`
+            common.approved(that, target, "POST", template, "errorAjax")
         }
         function cancel(that, id) {
             common.cancel(that, id, url_cancel)

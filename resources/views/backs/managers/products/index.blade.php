@@ -7,15 +7,14 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Products manager
+                        Sản phẩm
                         {{--                        <small>list all</small>--}}
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Manager</a></li>
-                        <li class="breadcrumb-item"><a href="#">Product</a></li>
-                        <li class="breadcrumb-item active">List</li>
+                        <li class="breadcrumb-item"><a href="#">Quản lý</a></li>
+                        <li class="breadcrumb-item active">Sản phẩm</li>
                     </ol>
                 </div>
             </div>
@@ -30,9 +29,9 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-user"></i>
-                                Product list
-                                <a href="{!! route('products.create') !!}"><i class="fas fa-plus-circle"></i></a>
+                                <a href="{!! route('products.create') !!}" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>
+                                    Thêm mới
+                                </a>
                             </h3>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 100%;">

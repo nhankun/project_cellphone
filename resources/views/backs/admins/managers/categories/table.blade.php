@@ -17,7 +17,7 @@
         </td>
         <td class="text-center">
             <span class="tag tag-danger">
-                {!! isset($provider->expires_at) ? $user->getTimeLoggedIn($user->expires_at) : 'Not found'!!}
+                {!! isset($category->created_at) ? $category->getTimeLoggedIn($category->created_at) : 'Not found'!!}
             </span>
         </td>
         <td class="text-center">

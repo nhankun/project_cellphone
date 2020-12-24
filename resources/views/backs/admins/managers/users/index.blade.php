@@ -1,4 +1,4 @@
-@extends('backs.layouts.master')
+@extends('backs.admins.layouts.master')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -68,7 +68,7 @@
                                     </tr>
                                 </thead>
                                 <tbody id="pannel">
-                                    @include('backs.admins.users.table')
+                                    @include('backs.admins.managers.users.table')
                                 </tbody>
                             </table>
                         </div>
@@ -100,7 +100,7 @@
 
         var categories = (function () {
 
-            var url = '{{ route('admin_users.index') }}';
+            var url = '{{ route('users.index') }}';
             var title = "Are you sure?";
             var text = "You won't be able to revert this!";
             var cancelButtonText = "Cancel";

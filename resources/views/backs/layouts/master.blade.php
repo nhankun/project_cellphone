@@ -55,7 +55,7 @@
         <a href="{!! route('dashboard.index') !!}" class="brand-link">
             <img src="{!! asset('backs/assets/dist/img/AdminLTELogo.png') !!}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">Admin Cellphone</span>
+            <span class="brand-text font-weight-light">Manage Cellphone</span>
 {{--            <span class="brand-text font-weight-light">AdminLTE 3</span>--}}
         </a>
 
@@ -147,6 +147,7 @@
     $.widget.bridge('uibutton', $.ui.button);
 </script>
 
+<script src="{{ asset("js/managers/edit_tag.js") }}"></script>
 @yield('script')
 </body>
 </html>
