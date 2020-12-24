@@ -114,7 +114,10 @@
 <!-- /.card-body -->
 
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" style="width: 100%;">Save</button>
+    <div class="btn-group" style="width: 100%">
+        <a href="{{ route("categories.index") }}" class="btn btn-outline-secondary mr-1">Back list</a>
+        <button type="submit" class="btn btn-primary ml-1">Save</button>
+    </div>
 </div>
 
 @section('script')

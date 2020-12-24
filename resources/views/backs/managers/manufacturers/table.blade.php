@@ -17,7 +17,7 @@
         </td>
         <td class="text-center">
             <span class="tag tag-danger">
-{{--                {!! isset($provider->expires_at) ? $user->getTimeLoggedIn($user->expires_at) : 'Not found'!!}--}}
+                {!! isset($provider->expires_at) ? $user->getTimeLoggedIn($user->expires_at) : 'Not found'!!}
             </span>
         </td>
         <td class="text-center">
@@ -36,7 +36,7 @@
         <td class="text-center">
             <a href="{!! route('categories.edit',$category) !!}" class="mb-2 mr-2 btn btn-info"><i class="fas fa-edit"></i>
             </a>
-            <a href="{!! route('manager_categories.destroy',$category) !!}" class="mb-2 mr-2 btn btn-danger simpleConfirm"><i
+            <a href="{!! route('categories.destroy',$category) !!}" class="mb-2 mr-2 btn btn-danger simpleConfirm"><i
                     class="far fa-trash-alt"></i>
             </a>
         </td>

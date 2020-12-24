@@ -1,18 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Backs\Categories;
+namespace App\Http\Controllers\Admins\Managers\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\Categories\Category;
+use App\Http\Requests\Backs\Admins\Managers\Users\UserRequest;
+use App\Models\District;
 use App\Models\Province;
-use App\Repositories\Categories\CategoryRepository;
+use App\Models\Users\User;
+use App\Repositories\Admins\Managers\UserRepository;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
     private $repository;
 
-    public function __construct(CategoryRepository $repository)
+    public function __construct(UserRepository $repository)
     {
         $this->repository = $repository;
     }
@@ -24,9 +26,9 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $category = $this->repository->getCategoryFirst();
-        if ($category) {
-            return $this->edit($category);
+        $user = $this->repository->getUserFirst();
+        if ($user){
+            return  redirect()->route('admin_users.index');
         }else{
             return $this->create();
         }
@@ -39,7 +41,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backs.managers.categories.create');
+        $provinces = Province::all();
+        return view('backs.admins.managers.users.create',compact(['provinces']));
     }
 
     /**
@@ -48,11 +51,10 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-//        dd($request->all());
-        $this->repository->create($request, null);
-        return redirect()->route('manager_categories.index');
+        $user = $this->repository->create($request,null);
+        return redirect()->route('admin_users.index');
     }
 
     /**
@@ -61,9 +63,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category)
+    public function show(User $user)
     {
-        //
+
     }
 
     /**
@@ -72,9 +74,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(User $user)
     {
-        return view('backs.managers.categories.edit',compact('category'));
+        $provinces = Province::all();
+        return view('backs.admins.managers.users.edit',compact(['provinces','user']));
     }
 
     /**
@@ -84,10 +87,10 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(UserRequest $request,User $user)
     {
-        $this->repository->create($request,$category);
-        return redirect()->back();
+        $record = $this->repository->create($request,$user);
+        return redirect()->route('admin_users.index');
     }
 
     /**
@@ -96,8 +99,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
+        //
+    }
 
+    public function getDistrictByProvince(Request $request)
+    {
+        if ($request->ajax()){
+            return District::where('key_province',$request->key_province)->get(['key','name']);
+        }
     }
 }

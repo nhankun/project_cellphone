@@ -7,15 +7,14 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        Category manager
+                        @lang("category.category")
                         {{--                        <small>list all</small>--}}
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Manager</a></li>
-                        <li class="breadcrumb-item"><a href="#">Category</a></li>
-                        <li class="breadcrumb-item active">List</li>
+                        <li class="breadcrumb-item"><a href="#">Quản lý</a></li>
+                        <li class="breadcrumb-item active">Loai sản phẩm</li>
                     </ol>
                 </div>
             </div>
@@ -30,9 +29,9 @@
                     <div class="card card-primary card-outline">
                         <div class="card-header">
                             <h3 class="card-title">
-                                <i class="fas fa-user"></i>
-                                Category list
-                                <a href="{!! route('categories.create') !!}"><i class="fas fa-plus-circle"></i></a>
+                                <a href="{!! route('categories.create') !!}" class="btn btn-outline-primary"><i class="fas fa-plus-circle"></i>
+                                    Thêm mới
+                                </a>
                             </h3>
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 100%;">
@@ -93,13 +92,14 @@
 @section('script')
     {{--    <script src="{!! asset('backs/admin/js/category.js') !!}"></script>--}}
     {{-- Chưa làm order by theo current pages  --}}
+    <script defer src="{{ asset('js/common.js') }}"></script>
     <script !src="">
-            {{--var url_approved = "{!! route('AdminCategory.approved') !!}";--}}
-            {{--var url_cancel = "{!! route('AdminCategory.cancel') !!}";--}}
+            var url_approved = "{!! route('categories.approved', ['category' => 'category']) !!}";
+            var url_cancel = "{!! route('categories.cancel', ['category' => 'category']) !!}";
 
         var categories = (function () {
 
-                var url = '{{ route('manager_categories.index') }}';
+                var url = '{{ route('categories.index') }}';
                 var title = "Are you sure?";
                 var text = "You won't be able to revert this!";
                 var cancelButtonText = "Cancel";
@@ -125,7 +125,7 @@
                         var keycode = (event.keyCode ? event.keyCode : event.which);
                         // console.log(keycode);
                         if (keycode == '13') {
-                            event.preventDefault();
+                            event.preventDefault();ư
                             $('#btnsearch').focus().click();
                         }
                     });
@@ -138,6 +138,15 @@
             })();
 
         $(document).ready(categories.onReady)
+
+        function approved(that, id) {
+            common.approved(that, id, url_approved)
+        }
+        function cancel(that, id) {
+            common.cancel(that, id, url_cancel)
+        }
+
     </script>
+
 @endsection
 

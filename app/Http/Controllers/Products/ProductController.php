@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Backs\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categories\Category;
+use App\Models\Products\Manufacturer;
 use App\Models\Products\Product;
 use App\Models\Providers\Provider;
-use App\Repositories\Products\DetailRepository;
 use App\Repositories\Products\ProductRepository;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
@@ -25,9 +25,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $product = $this->repository->getProductFirst();
+        $product = $request->cookie('product_id');
         if ($product){
             return $this->edit($product);
         }else{
@@ -42,12 +42,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::actived()->get();
-        $providers = Provider::actived()->get();
-        return view('backs.managers.products.basic-infos.create',compact(['categories','providers']))
-            ->withCookie(
-                'product_id', null
-            );
+        $results = $this->repository->getSelectionData();
+        $categories = $results['categories'];
+        $manufacturers = $results['manufacturers'];
+        $providers = $results['providers'];
+        return view('backs.managers.products.basic-infos.create',compact(['categories', 'providers','manufacturers']));
     }
 
     /**
@@ -58,8 +57,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
         $product = $this->repository->create($request,null);
+        if($request->ajax()) {
+            return response()->json([
+                'results' => $product,
+                'view' => $product ? view('managers.products.images.create')->render() : null
+            ])->withCookie('product_id', $product->id);
+        }
         return redirect()->route('images.index')
             ->withCookie(
                 'product_id', $product->id
@@ -83,14 +87,15 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
+        $product = $this->repository->getProductById($id);
         $categories = Category::actived()->get();
         $providers = Provider::actived()->get();
-        return view('backs.managers.products.basic-infos.edit',compact(['product','categories','providers']))
-            ->withCookie(
-                'product_id', $product->id
-            );
+        $manufacturers = Manufacturer::all();
+        return response(
+            view('backs.managers.products.basic-infos.edit',compact(['product','categories','providers','manufacturers']))
+                )->withCookie('product_id', $product->id);
     }
 
     /**
